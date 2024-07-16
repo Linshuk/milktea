@@ -1,0 +1,20 @@
+function toPrice(val) {
+  if(!val){
+    val = 0;
+  }
+  return (val.toFixed(2))
+  
+};
+
+function parsePrice(val){
+  if (!val) {
+    val = 0;
+  }
+  return val.toFixed(2).split(".");
+}
+
+
+module.exports = ({
+  toPrice: toPrice,
+  parsePrice: parsePrice
+});

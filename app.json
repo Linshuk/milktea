@@ -1,12 +1,46 @@
 {
   "pages": [
-    "pages/index/index"
+    "pages/index/index",
+    "pages/login/login",
+    "pages/user/user",
+    "pages/basket/basket",
+    "pages/category/category"
   ],
   "window": {
     "navigationBarTextStyle": "black",
     "navigationBarBackgroundColor": "#009966",
     "navigationBarTitleText": "聚优品商城"
   },
+  "tabBar": {
+    "selectedColor": "#3a86b9",
+    "color": "#b8b8b8",
+    "list": [
+        {
+            "pagePath": "pages/index/index",
+            "text": "首页",
+            "iconPath": "images/tabbar/homepage.png",
+            "selectedIconPath": "images/tabbar/homepage-sel.png"
+        },
+        {
+            "pagePath": "pages/category/category",
+            "text": "分类",
+            "iconPath": "images/tabbar/category.png",
+            "selectedIconPath": "images/tabbar/category-sel.png"
+        },
+        {
+            "pagePath": "pages/basket/basket",
+            "text": "购物车",
+            "iconPath": "images/tabbar/basket.png",
+            "selectedIconPath": "images/tabbar/basket-sel.png"
+        },
+        {
+            "pagePath": "pages/user/user",
+            "text": "我的",
+            "iconPath": "images/tabbar/user.png",
+            "selectedIconPath": "images/tabbar/user-sel.png"
+        }
+    ]
+},
 
   "style": "v2",
   "componentFramework": "glass-easel",
