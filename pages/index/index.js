@@ -39,13 +39,54 @@ Page({
   },
 
   onLoad(){
-    // this.getAllData()
+    this.getAllData()
   },
 
+  /***跳转商品详情页面 */
+  gotoDetail(e){
+    console.log(e);
+    wx.navigateTo({
+      url: '../detail/detail?prodId=' + e.currentTarget.dataset.prodid ,
+    })
+  },
+
+
+
   getAllData(){
+    this.getCartCount() // 获取购物车的数量
     this.getBannerList()
     this.getNoticeList()
     this.getTag()
+  },
+
+  /***
+   * 获取购物车的数量角标
+   */
+  getCartCount(){
+    var page = this
+    var params = {
+      url: config.prodCount,
+      method: "GET",
+      data: {},
+      callBack(res){
+        if(res > 0){
+          wx.setTabBarBadge({
+            index: 2, // 购物车的tabbar角标
+            text: res + "" // 
+          })
+        }else{
+          wx.removeTabBarBadge({
+            index: 2,
+          })
+        }
+      },
+      errCallBack(res){
+      }
+    }
+    http.request(params)
+
+
+
   },
 
 
@@ -64,7 +105,7 @@ Page({
       errCallBack(res){
       }
     }
-    http.request(params,true)
+    http.request(params)
   },
 
 
@@ -76,8 +117,6 @@ Page({
       method: "GET",
       data: {},
       callBack(res){
-        console.log("callBack");
-        console.log(res.records);
         page.setData({
           news: res.records
         })
@@ -85,7 +124,7 @@ Page({
       errCallBack(res){
       }
     }
-    http.request(params,true)
+    http.request(params)
   },
 
   getTag(){
@@ -108,7 +147,7 @@ Page({
       errCallBack(res){
       }
     }
-    http.request(params,true)
+    http.request(params)
   },
 
   getTagProd(id,index){
@@ -128,13 +167,11 @@ Page({
         this.setData({
           tagList: taglist,
         });
-
-        console.log(this.data.tagList);
       },
       errCallBack(res){
       }
     }
-    http.request(params,true)
+    http.request(params)
   }
 
 

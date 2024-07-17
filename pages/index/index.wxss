@@ -48,7 +48,6 @@ swiper.pic-swiper .banner {
 }
 
 .container .bg-sear {
-  /* 固定顶部 */
   position: fixed;
   z-index: 999;
   width: 100%;
@@ -171,12 +170,12 @@ swiper.pic-swiper .banner {
   height: 64rpx;
   line-height: 64rpx;
   font-size: 32rpx;
-  padding: 40rpx 0 10rpx 30rpx;
-  color: #333;
+  padding:40rpx 0 10rpx 30rpx;
+  color:#333;
   background: #fff;
 }
 
-.up-to-date .title {
+.up-to-date .title{
   color: #fff;
   background: none;
 }
@@ -188,32 +187,32 @@ swiper.pic-swiper .banner {
 }
 
 .up-to-date .title .more-prod-cont .more {
-  position: absolute;
-  right: 30rpx;
-  top: 48rpx;
-  color: #fff;
-  font-size: 24rpx;
-  background: #65addf;
-  border-radius: 30rpx;
-  padding: 0 30rpx;
-  height: 44rpx;
-  line-height: 44rpx;
+  position:absolute;
+right:30rpx;
+top:48rpx;
+color:#fff;
+font-size:24rpx;
+background:#65addf;
+border-radius:30rpx;
+padding:0 30rpx;
+height:44rpx;
+line-height:44rpx;
 
 }
 
-.title .more-prod-cont .more {
-  position: absolute;
-  right: 30rpx;
-  top: 48rpx;
-  color: #666;
-  font-size: 24rpx;
-  padding: 0 20rpx;
-  height: 44rpx;
-  line-height: 44rpx;
+.title .more-prod-cont .more{
+   position:absolute;
+  right:30rpx;
+  top:48rpx;
+  color:#666;
+  font-size:24rpx;
+  padding:0 20rpx;
+  height:44rpx;
+  line-height:44rpx;
 }
 
 .title .more-prod-cont .arrow {
-  top: 58rpx;
+  top:58rpx;
   right: 30rpx;
   border-top: 2rpx solid #666;
   border-right: 2rpx solid #666;
@@ -231,9 +230,9 @@ swiper.pic-swiper .banner {
   margin: auto;
   height: auto;
   width: calc(100% - 40rpx);
-  padding: 0 20rpx;
+  padding:0 20rpx;
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap:wrap;
   justify-content: space-around;
   /* padding: 10rpx 0 0 0; */
 }
@@ -254,8 +253,8 @@ swiper.pic-swiper .banner {
   width: 220rpx;
   background: #fff;
   display: inline-block;
-  margin-bottom: 20rpx;
-  box-shadow: 0rpx 6rpx 8rpx rgba(58, 134, 185, 0.2);
+  margin-bottom:20rpx;
+  box-shadow: 0rpx 6rpx 8rpx rgba(58,134,185,0.2);
 }
 
 .up-to-date .item-cont .prod-item .imagecont {
@@ -269,7 +268,7 @@ swiper.pic-swiper .banner {
   vertical-align: middle;
   border-top-left-radius: 10rpx;
   border-top-right-radius: 10rpx;
-  font-size: 0;
+  font-size:0;
 
 }
 
@@ -312,7 +311,7 @@ swiper.pic-swiper .banner {
   padding-bottom: 20rpx;
   box-sizing: border-box;
   /* border: 2rpx solid #e1e1e1; */
-  box-shadow: 0rpx 6rpx 8rpx rgba(58, 134, 185, 0.2);
+  box-shadow: 0rpx 6rpx 8rpx rgba(58,134,185,0.2);
 }
 
 .hot-sale .prod-items:nth-child(2n-1) {
@@ -345,8 +344,7 @@ swiper.pic-swiper .banner {
   padding: 0 10rpx;
 }
 
-.prod-items .hot-text .prod-info,
-.more-prod .prod-text-right .prod-info {
+.prod-items .hot-text .prod-info, .more-prod .prod-text-right .prod-info {
   font-size: 22rpx;
   color: #999;
   white-space: nowrap;
@@ -462,5 +460,3 @@ swiper.pic-swiper .banner {
   border-radius: 50%; */
   padding: 8rpx;
 }
-
-

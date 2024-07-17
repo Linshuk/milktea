@@ -47,27 +47,10 @@
         </block>
       </view>
       <view>
-
       </view>
-
-
-
     </scroll-view>
-
-
-
   </view>
-
-
-
   <!-- 侧边栏end -->
-
-
-
-
-
 </view>
-
-
 <wxs module="wxs" src="../../wxs/number.wxs"></wxs>
 

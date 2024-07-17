@@ -7,6 +7,21 @@ Page({
   data: {
 
   },
+  logout(){
+    
+  },
+
+  /***
+   * 跳转订单列表
+   */
+  gotoOrderList(e){
+    var status = e.currentTarget.dataset.status
+
+    console.log();
+    wx.navigateTo({
+      url: '../orderList/orderList?status=' + status,
+    })
+  },
 
   /**
    * 生命周期函数--监听页面加载

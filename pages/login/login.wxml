@@ -1,2 +1,35 @@
-<!--pages/login/login.wxml-->
-<text>pages/login/login.wxml</text>
+<view class="title">聚优品商城</view>
+<view class="login-form">
+  <view class="item">
+    <view class="account">
+      <text class="input-item">用户名</text>
+      <input type="text" placeholder="请输入用户名" placeholder-style="inp-placeholder"
+      data-type="account" value="{{username}}" bindinput="getInputVal"/>
+    </view>
+  </view>
+  <view class="item">
+    <view class="account">
+      <text class="input-item">用户名</text>
+      <input type="password" placeholder="请输入密码" placeholder-style="inp-placeholder"
+      data-type="password" bindinput="getInputVal"/>
+    </view>
+  </view>
+
+  <view>
+    <button class="authorized-btn" bind:tap="handleLoginOrRegister" >{{isRegister? '登录': '注册'}}</button>
+    <button class="to-idx-btn">回到首页</button>
+  </view>
+
+  <view class="operate">
+    <view class="to-register" bind:tap="changeLoginOrRegister">{{isRegister? '没有账号？去注册':'已有账号？去登录'}}</view>
+  </view>
+
+
+
+</view>
+
+
+
+
+
+

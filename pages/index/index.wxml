@@ -62,7 +62,7 @@
       <view class="item-cont">
         <!-- 遍历每日上新的商品数据 -->
         <block wx:for="{{item.prods}}" wx:for-item="prod" wx:key="prodId">
-          <view class="prod-item">
+          <view class="prod-item" bind:tap="gotoDetail" data-prodid="{{prod.prodId}}">
             <view>
               <view class="imagecont">
                 <image src="{{prod.pic}}" class="prodimg" />

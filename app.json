@@ -2,9 +2,11 @@
   "pages": [
     "pages/index/index",
     "pages/login/login",
+    "pages/detail/detail",
     "pages/user/user",
     "pages/basket/basket",
-    "pages/category/category"
+    "pages/category/category",
+    "pages/orderList/orderList"
   ],
   "window": {
     "navigationBarTextStyle": "black",

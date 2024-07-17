@@ -9,7 +9,8 @@ Page({
    */
   data: {
     categoryList: [],
-    productList: []
+    productList: [],
+    selIndex: 0
   },
 
   /**
@@ -29,7 +30,6 @@ Page({
       selIndex: index,
       categoryImg: this.data.categoryList[index].pic
     })
-
   },
 
 

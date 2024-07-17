@@ -21,60 +21,83 @@ function request(params,isGetToken){
     title: '正在请求中',
   })
   wx.request({
-    // 访问地址: baseUrl + 接口名称
-    url: config.domain + params.url,
+    url: config.domain + params.url, //接口请求地址
     data: params.data,
-    method: params.method === undefined ? "POST" : params.method,
-    // header: {
-    //   'Authorization' : params.login ? undefined : wx.getStorageSync('token')
-    // }
+    header: {
+      // 'content-type': params.method == "GET" ? 'application/x-www-form-urlencoded' : 'application/json;charset=utf-8',
+      'Authorization': params.login ? undefined : wx.getStorageSync('token')
+    },
+    method: params.method == undefined ? "POST" : params.method,
     dataType: 'json',
-    responseType: params.responseType === undefined ? 'text': params.responseType,
-    success(res){
-      const responseData = res.data
-      if(responseData.code === '00000'){
-        if(params.callBack){
-          params.callBack(responseData.data)
+    responseType: params.responseType == undefined ? 'text' : params.responseType,
+    success: function(res) {
+			const responseData = res.data
+
+      // 00000 请求成功
+      if (responseData.code === '00000') {
+        if (params.callBack) {
+          params.callBack(responseData.data);
         }
         return
       }
 
-      // 接口未授权
-      if(responseData.code === 'A00004'){
+      // A00004 未授权
+      if (responseData.code === 'A00004') {
         wx.navigateTo({
           url: '/pages/login/login',
         })
+				return
       }
 
-      // 接口异常
-      if(responseData.code === 'A00005'){
+      // A00005 服务器出了点小差
+      if (responseData.code === 'A00005') {
+        console.error('============== 请求异常 ==============')
+        console.log('接口: ', params.url)
+        console.log('异常信息: ', responseData)
+        console.error('============== 请求异常 ==============')
+        if (params.errCallBack) {
+          params.errCallBack(responseData)
+          return
+        }
+        wx.showToast({
+          title: '服务器出了点小差~',
+          icon: 'none'
+        })
+      }
 
-        // 查看日志
-        // 打印一下错误信息
-        console.log("--------------------- 接口异常 start---------------");
-        console.log("接口url == " + url);
-        console.log("接口错误信息： " + responseData);
-        console.log("--------------------- 接口异常 end---------------");
-        if(params.errCallBack){
-            params.errCallBack(responseData)
-            return
+      // A00001 用于直接显示提示用户的错误，内容由输入内容决定
+      if (responseData.code === 'A00001') {
+        if (params.errCallBack) {
+          params.errCallBack(responseData)
+          return
+        }
+        wx.showToast({
+          title: responseData.msg || 'Error',
+          icon: 'none'
+        })
+        return
+      }
+
+      // 其他异常
+      if (responseData.code !== '00000') {
+        // console.log('params', params)
+      	wx.hideLoading();
+        if (params.errCallBack) {
+          params.errCallBack(responseData)
+        } else {
+          console.log(`接口: ${params.url}`)
+          console.log(`返回信息： `, res)
         }
       }
-
-      // 其他的异常
-      if(responseData.code !== '00000'){
-        console.log("--------------------- 接口异常 start---------------");
-        console.log("接口url == " + url);
-        console.log("接口错误信息： " + responseData);
-        console.log("--------------------- 接口异常 end---------------");
-        if(params.errCallBack){
-            params.errCallBack(responseData)
-            return
-        }
-      }
+ 
     },
-    fail(){},
-    complete(){}
+    fail: function(err) {
+      wx.hideLoading();
+      wx.showToast({
+        title: "服务器出了点小差",
+        icon: "none"
+      });
+    }
   })
 
 

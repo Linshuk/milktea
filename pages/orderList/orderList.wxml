@@ -1,0 +1,45 @@
+<view class="container">
+  <view class="parent">
+    <view class="item {{status == 1 ? 'active': ''}}">待支付</view>
+    <view class="item {{status == 2 ? 'active': ''}}">待发货</view>
+    <view class="item {{status == 3 ? 'active': ''}}">待收货</view>
+    <view class="item {{status == 5 ? 'active': ''}}">已完成</view>
+  </view>
+
+  <swiper current="{{current}}" duration="100">
+    <swiper-item>
+      <view>
+        <!-- 订单列表渲染 -->
+        待支付列表
+      </view>
+    </swiper-item>
+
+    <swiper-item>
+      <view>
+        <!-- 订单列表渲染 -->
+        待发货列表
+      </view>
+    </swiper-item>
+
+    <swiper-item>
+      <view>
+        <!-- 订单列表渲染 -->
+        待收货列表
+      </view>
+    </swiper-item>
+
+    <swiper-item>
+      <view>
+        <!-- 订单列表渲染 -->
+        已完成列表
+      </view>
+    </swiper-item>
+
+  </swiper>
+
+</view>
+
+
+
+
+

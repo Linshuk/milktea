@@ -1,0 +1,35 @@
+<view class="container">
+  <!-- 轮播图 -->
+  <swiper autoplay="true" indicator-dots="true" indicator-active-color="#1b7dec" indicator-color="#d1e5fb" interval="1500" duration="500" circular="true" >
+
+    <block wx:for="{{imgs}}">
+      <swiper-item>
+        <image src="{{item}}" mode="scaleToFill"/>
+    </swiper-item>
+    </block>
+
+
+  </swiper>
+
+  <!-- 商品信息 -->
+  <view class="prod-info">
+    <view class="tit-wrap">
+      <view class="prod-tit">{{prodName}}</view>
+      <view class="col" bind:tap="addOrCancleCollection">
+        <image src="../../images/icon/prod-col.png"/>
+        <text>收藏</text>
+      </view>
+    </view>
+    <view class="sales-p">好吃好好好吃</view>
+    <view class="prod-price">
+      <text class="price">￥<text class="price-num">{{wxs.parsePrice(38.00)[0]}}.</text> <text>{{wxs.parsePrice(38.00)[1]}}</text> </text>
+    </view>
+  </view>
+
+
+  <!-- 商品信息 -->
+
+</view>
+
+<wxs module="wxs" src="../../wxs/number.wxs"></wxs>
+
