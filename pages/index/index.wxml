@@ -1,6 +1,6 @@
 <view class="container">
   <!-- 搜索框start -->
-  <view class="bg-sear">
+  <view class="bg-sear" bind:tap="gotoSeach">
     <view class="section">
       <image src="../../images/icon/search.png" class="search-img" />
       <text class="placeholder">搜索</text>

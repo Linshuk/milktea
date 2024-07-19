@@ -6,7 +6,12 @@
     "pages/user/user",
     "pages/basket/basket",
     "pages/category/category",
-    "pages/orderList/orderList"
+    "pages/orderList/orderList",
+    "pages/search/search",
+    "pages/search-prod-show/search-prod-show",
+    "pages/order-detail/order-detail",
+    "pages/submit-order/submit-order",
+    "pages/delivery-address/delivery-address"
   ],
   "window": {
     "navigationBarTextStyle": "black",

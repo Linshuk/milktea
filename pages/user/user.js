@@ -1,4 +1,8 @@
 // pages/user/user.js
+const http = require('../../utils/http')
+const config = require('../../utils/config')
+const api = require('../../utils/extendApi')
+
 Page({
 
   /**
@@ -7,8 +11,43 @@ Page({
   data: {
 
   },
+
+  /***
+   * 注销登录
+   */
   logout(){
-    
+    var page = this
+    var params = {
+      url: config.logoutUrl,
+      method: "POST",
+      callBack(res){
+        // 移除购物车的角标
+        wx.removeTabBarBadge({
+          index: 2,
+        })
+        // 移除缓存
+        wx.removeStorageSync('loginResult')
+        // 移除token
+        wx.removeStorageSync('token')
+
+        api.toast({
+          title: '退出成功'
+        })
+
+        // 跳转到首页的tab,重定向到登录页
+        setTimeout(()=>{
+          wx.switchTab({
+            url: '../index/index',
+          })
+        },1000)
+
+      },
+      errCallBack(res){
+      }
+    }
+    console.log(params);
+    http.request(params)
+
   },
 
   /***

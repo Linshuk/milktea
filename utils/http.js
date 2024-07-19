@@ -103,12 +103,44 @@ function request(params,isGetToken){
 
 }
 
+/***获取购物车的数量 */
+function getCartCount(){
+  var params = {
+    url: config.prodCountUrl,
+    method: 'GET',
+    data:{},
+    callBack(res){
+      if(res > 0){
+        wx.setTabBarBadge({
+          index: 2,
+          text: res + "",
+        })
+
+        var app = getApp()
+        app.globalData.totalCartCount = res;
+
+
+      }else{
+        wx.removeTabBarBadge({
+          index: 2,
+        })
+        var app = getApp()
+        app.globalData.totalCartCount = 0;
+      }
+    },
+    errCallBack(res){
+    }
+  }
+
+  request(params)
+}
+
+
+
+
 
 exports.request = request;
-
-
-
-
+exports.getCartCount = getCartCount;
 
 
 

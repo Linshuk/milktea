@@ -42,6 +42,16 @@ Page({
     this.getAllData()
   },
 
+
+
+  /***跳转商品详情页面 */
+  gotoSeach(e){
+    console.log(e);
+    wx.navigateTo({
+      url: '../search/search' ,
+    })
+  },
+
   /***跳转商品详情页面 */
   gotoDetail(e){
     console.log(e);
