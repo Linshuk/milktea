@@ -1,0 +1,10 @@
+<view class="container">
+  <view class="recent-news">
+    <block wx:for="{{news}}">
+        <view class="news-item">
+          <view class="news-item-title" data-id="{{item.id}}" bind:tap="toNewsDetail">{{item.title}}</view>
+          <view class="news-item-date">{{item.publishTime}}</view>
+        </view>
+    </block>
+  </view>
+</view>

@@ -226,41 +226,30 @@ Page({
   },
 
 
-  /***
-   * 结算
+  /**
+   * 去结算
    */
-  toFirmOrder(e) {
-    console.log(e);
-    // 获取购物车列表
-    var shopCartItemDiscounts = this.data.shopCartItemDiscounts
-    // 创建购物车ID
-    var basketId = []
-    // 遍历购物车列表
-    shopCartItemDiscounts.forEach(item => {
-      // 购物车数据
-      item.shopCartItems.forEach(cartItem => {
-
-        //把有被选中的挑选出来
-        if (cartItem.checked) {
-          basketId.push(cartItem.basketId)
+  toFirmOrder: function () {
+    var shopCartItemDiscounts = this.data.shopCartItemDiscounts;
+    var basketIds = [];
+    shopCartItemDiscounts.forEach(shopCartItemDiscount => {
+      shopCartItemDiscount.shopCartItems.forEach(shopCartItem => {
+        if (shopCartItem.checked) {
+          basketIds.push(shopCartItem.basketId)
         }
       })
     })
-
-    if (!basketId.length) {
-      api.toast({
-        title: "请选择商品"
+    if (!basketIds.length) {
+      wx.showToast({
+        title: '请选择商品',
+        icon: "none"
       })
       return
     }
-
-    // 1、拼接到url后面，转json字符串
-    // 2、存缓存
-    wx.setStorageSync('basketIds', JSON.stringify(basketId))
+    wx.setStorageSync("basketIds", JSON.stringify(basketIds));
     wx.navigateTo({
-      url: '../submit-order/submit-order?order-entrytype=2',
+      url: '/pages/submit-order/submit-order?orderEntry=0',
     })
-
   },
 
 

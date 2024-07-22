@@ -24,6 +24,10 @@ var totalPayUrl = "/p/shopCart/totalPay"   // 根据店铺ID获取热搜数据
 var changeItemUrl = "/p/shopCart/changeItem"   // 添加、修改用户购物车物品
 var deleteItemUrl = "/p/shopCart/deleteItem"   // 删除用户购物车物品
 
+/**************    公告    ************** */
+var noticeListUrl = "/shop/notice/noticeList"   // 公告列表信息
+var noticeInfoUrl = "/shop/notice/info"   // 公告详情信息
+
 
 /**************    订单    ************** */
 var orderConfirmUrl = "/p/order/confirm"   // 删除用户购物车物品
@@ -63,3 +67,5 @@ exports.totalPayUrl = totalPayUrl;
 exports.changeItemUrl = changeItemUrl;
 exports.deleteItemUrl = deleteItemUrl;
 exports.orderConfirmUrl = orderConfirmUrl;
+exports.noticeListUrl = noticeListUrl;
+exports.noticeInfoUrl = noticeInfoUrl;

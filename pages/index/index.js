@@ -182,7 +182,18 @@ Page({
       }
     }
     http.request(params)
+  },
+
+  /***
+   * 跳转公告页面
+   */
+  gotoNoticeList(){
+    wx.navigateTo({
+      url: '../recent-news/recent-news',
+    })
   }
+
+
 
 
 })

@@ -422,12 +422,21 @@ Page({
   },
 
 
-  /***
-   * 跳转到下单页面
+  /**
+   * 立即购买
    */
-  buyNow(){
+  buyNow: function() {
+    if (!this.data.findSku) {
+      return;
+    }
+    wx.setStorageSync("orderItem", JSON.stringify({
+      prodId: this.data.prodId,
+      skuId: this.data.defaultSku.skuId,
+      prodCount: this.data.prodNum,
+      shopId: this.data.shopId
+    }));
     wx.navigateTo({
-      url: '../submit-order/submit-order?order-entrytype=1',
+      url: '/pages/submit-order/submit-order?orderEntry=1',
     })
 
   },

@@ -44,7 +44,7 @@
         </swiper-item>
       </block>
     </swiper>
-    <text class="arrow"></text>
+    <text class="arrow" bind:tap="gotoNoticeList"></text>
   </view>
   <!-- 公告end -->
 
