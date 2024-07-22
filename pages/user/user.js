@@ -9,7 +9,9 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    collectionCount: 0,
+    msgCount: 0,
+    historyCount: 0
   },
 
   /***
@@ -62,11 +64,46 @@ Page({
     })
   },
 
+  myCollectionHandle(e){
+    wx.navigateTo({
+      url: '../prod-classify/prod-classify?sts=' + e.currentTarget.dataset.sts,
+    })
+  },
+
+
+
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad(options) {
+    this.loadCollectionCount()
+  },
 
+  
+  loadCollectionCount(){
+    var page = this
+    var params = {
+      url: config.collectionCountUrl,
+      method: "GET",
+      data: {},
+      callBack: (res) => {
+        page.setData({
+          collectionCount: res
+        })
+      },
+      errCallBack(res){
+      }
+    }
+    http.request(params)
+  },
+
+  /***
+   * 跳转收货地址列表
+   */
+  gotoAddrList(){
+    wx.navigateTo({
+      url: '../delivery-address/delivery-address',
+    })
   },
 
   /**

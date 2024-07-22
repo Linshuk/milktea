@@ -53,18 +53,18 @@
 
     <!-- 收藏、消息、足迹 -->
     <view class="prod-col">
-      <view class="col-item" bindtap='myCollectionHandle'>
-        <view class="num">1</view>
+      <view class="col-item" bindtap='myCollectionHandle' data-sts="5">
+        <view class="num">{{collectionCount}}</view>
         <view class="tit">我的收藏</view>
       </view>
 
       <view class="col-item">
-        <view class="num">5</view>
+        <view class="num">{{msgCount}}</view>
         <view class="tit">我的消息</view>
       </view>
 
       <view class="col-item">
-        <view class="num">3</view>
+        <view class="num">{{historyCount}}</view>
         <view class="tit">我的足迹</view>
       </view>
     </view>
@@ -96,7 +96,7 @@
             <text class="arrowhead"></text>
         </view>
 
-        <view class="memu-item">
+        <view class="memu-item" bind:tap="gotoAddrList">
             <view class="i-name">
               <image src="../../images/icon/myAddr.png" />              
               <text>收货地址</text>

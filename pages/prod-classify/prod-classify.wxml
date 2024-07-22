@@ -1,2 +1,31 @@
-<!--pages/prod-classify/prod-classify.wxml-->
-<text>pages/prod-classify/prod-classify.wxml</text>
+<!-- 商品收藏、新品推荐、每日疯抢、查看更多、更多 -->
+<view class="container">
+  <view class="hotsale-item-cont">
+    <block wx:for="{{prodList}}">
+      <view class="prod-items">
+            <view class="hot-imagecont">
+              <image src="{{item.pic}}" class="hotsaleimg" />
+            </view>
+
+            <view class="hot-text">
+              <view class="hotprod-text">{{item.prodName}}</view>
+              <view class="prod-info">{{item.brief}}</view>
+              <view class="prod-text-info">
+                <view class="price">
+                  <text class="symbol">￥</text>
+                  <text class="big-num">{{wxs.parsePrice(item.price)[0]}}.</text>
+                  <text class="small-num">{{wxs.parsePrice(item.price)[1]}}</text>
+                </view>
+      
+              </view>
+            </view>
+          </view>
+    </block>
+
+  </view>
+
+
+
+</view>
+
+<wxs module="wxs" src="../../wxs/number.wxs"></wxs>

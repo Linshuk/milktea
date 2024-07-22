@@ -191,6 +191,24 @@ Page({
     wx.navigateTo({
       url: '../recent-news/recent-news',
     })
+  },
+
+  /***
+   * 查看更多
+   */
+  gotoMore(e){
+    wx.navigateTo({
+      url: '../prod-classify/prod-classify?sts='+e.currentTarget.dataset.sts,
+    })
+  },
+
+  /***
+   * 新品推荐
+   */
+  gotoProdList(e){
+    wx.navigateTo({
+      url: '../prod-classify/prod-classify?sts=' + e.currentTarget.dataset.sts,
+    })
   }
 
 

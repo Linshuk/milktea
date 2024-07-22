@@ -25,7 +25,7 @@
     <!-- 四个小标签start -->
     <view class="cat-item">
       <block wx:for="{{itemList}}" wx:key="id">
-        <view class="item">
+        <view class="item" bind:tap="gotoProdList" data-sts="3">
           <image src="{{item.imgUrl}}" />
           <text>{{item.tagName}}</text>
         </view>
@@ -54,7 +54,7 @@
     <view class="up-to-date" wx:if="{{item.style == 2}}">
       <view class="title">
         <text>{{item.title}}</text>
-        <view class="more-prod-cont">
+        <view class="more-prod-cont" bind:tap="gotoMore" data-sts="0">
           <text class="more">查看更多</text>
         </view>
       </view>

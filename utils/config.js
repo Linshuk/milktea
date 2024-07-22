@@ -10,10 +10,13 @@ var prodCount = "/p/shopCart/prodCount"   // 购物车数量
 var prodInfoUrl = "/prod/prodInfo"   // 购物车数量
 var isCollectionUrl = "/p/user/collection/isCollection"   // 根据商品id获取该商品是否在收藏夹中
 var addOrCancelUrl = "/p/user/collection/addOrCancel"   // 添加-取消收藏
+var prodsByUserUrl = "/p/user/collection/prods"   // 获取用户收藏商品列表
+var collectionCountUrl = "/p/user/collection/count"   // 获取用户收藏商品列表
 var prodCommDataUrl = "/prodComm/prodCommData"   // 评论数据
 var prodCommPageByProdUrl = "/prodComm/prodCommPageByProd"   // 评论数据
 var hotSearchByShopIdUrl = "/search/hotSearchByShopId"   // 根据店铺ID获取热搜数据
 var searchProdPageUrl = "/search/searchProdPage"   // 根据店铺ID获取热搜数据
+var lastedProdPageUrl = "/prod/lastedProdPage"   // 根据店铺ID获取热搜数据
 
 
 
@@ -31,7 +34,14 @@ var noticeInfoUrl = "/shop/notice/info"   // 公告详情信息
 
 /**************    订单    ************** */
 var orderConfirmUrl = "/p/order/confirm"   // 删除用户购物车物品
+var myOrderUrl = "/p/myOrder/myOrder"   // 删除用户购物车物品
+var cancelOrderUrl = "/p/myOrder/cancel"   // 根据订单号取消订单
 
+
+/**************    地址    ************** */
+var addAddrUrl = "/p/address/addAddr"   // 删除用户购物车物品
+var addrInfoUrl = "/p/address/addrInfo"   // 获取地址信息
+var deleteAddrUrl = "/p/address/deleteAddr"   // 删除订单用户地址
 
 
 
@@ -69,3 +79,11 @@ exports.deleteItemUrl = deleteItemUrl;
 exports.orderConfirmUrl = orderConfirmUrl;
 exports.noticeListUrl = noticeListUrl;
 exports.noticeInfoUrl = noticeInfoUrl;
+exports.prodsByUserUrl = prodsByUserUrl;
+exports.lastedProdPageUrl = lastedProdPageUrl;
+exports.collectionCountUrl = collectionCountUrl;
+exports.addAddrUrl = addAddrUrl;
+exports.addrInfoUrl = addrInfoUrl;
+exports.deleteAddrUrl = deleteAddrUrl;
+exports.myOrderUrl = myOrderUrl;
+exports.cancelOrderUrl = cancelOrderUrl;
