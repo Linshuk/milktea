@@ -1,6 +1,0 @@
-<view class="container">
-  <view class="news-detail">
-    <view class="news-detail-title">{{news.title}}</view>
-    <rich-text nodes="{{news.content}}"/>
-  </view>
-</view>
