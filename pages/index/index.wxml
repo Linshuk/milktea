@@ -1,9 +1,9 @@
-<view class="title">
+<!-- <view class="title">
 <image src="/icon/java.png" class="java-img"></image>
 <view class="tex">
 伪装喜茶
 </view>
-</view>
+</view> -->
 
 <!-- 轮播图展示海报 -->
 <swiper autoplay="true" indicator-dots="true" indicator-color="pink" indicator-active-color="orange" interval="3000" duration="500" class="swiperTop">
@@ -18,6 +18,53 @@
 	</swiper-item>
 </swiper>
 
+<!-- <view class="container"> -->
+  <!-- 用户信息和优惠券 -->
+  <view class="user-info">
+    <image class="user-avatar" src="/images/user.png"></image>
+    <text class="username">Hi~RIVER</text>
+    <button class="coupon-btn">优惠券1</button>
+  </view>
+  <view class="divider"></view>
+  <!-- 功能选项 -->
+  <view class="options">
+    <view class="option">
+      <image class="option-img" src="/images/pickup.png"></image>
+      <text class="option-text">到店取餐</text>
+      <text class="option-subtext">在线点，到店取</text>
+    </view>
+    <view class="option">
+      <image class="option-img" src="/images/delivery.png"></image>
+      <text class="option-text">外卖配送</text>
+      <text class="option-subtext">在线点，超快达</text>
+    </view>
+  </view>
+
+  <view class="divider"></view>
+
+  <!-- 其他功能按钮 -->
+  <view class="extra-options">
+    <view class="extra-option">
+      <image class="extra-option-img" src="/images/milktea.png"></image>
+      <text class="extra-option-text">熊猫币商城</text>
+    </view>
+    <view class="extra-option">
+      <image class="extra-option-img" src="/images/milktea.png"></image>
+      <text class="extra-option-text">学子卡</text>
+    </view>
+    <view class="extra-option">
+      <image class="extra-option-img" src="/images/milktea.png"></image>
+      <text class="extra-option-text">一起喝</text>
+    </view>
+    <view class="extra-option">
+      <image class="extra-option-img" src="/images/milktea.png"></image>
+      <text class="extra-option-text">签到</text>
+    </view>
+  </view>
+  <view class="divider"></view>
+
+
+
 <view class="recommend-bar">
 <view class="recommend-title">为你推荐</view>
 <view class="refresh" bindtap="recommend">
@@ -26,10 +73,17 @@
 </view>
 </view>
 
+
+
+
 <view class="recommend">
+<!-- 最外层容器   包含所有的推荐奶茶项 -->
 	<view wx:for="{{recommendedMilktea}}" wx:key="index">
+  <!-- 循环指令 遍历数据源-->
 		<view class="eachOne" bindtap="showDetail" data-id="{{item.id}}">
-			<image src="/images/id{{item.id}}.jpg" class="rec-img"></image>
+			<!-- 每个奶茶项的外层容器  showDetail是点击事件 -->
+      <image src="/images/id{{item.id}}.jpg" class="rec-img"></image>
+      <!-- rec-img   rec-name   rec-price 是样式类 -->
 			<view class="rec-name">{{item.name}}</view>
 			<view class="rec-price">￥{{item.price}}</view>
 		</view>
